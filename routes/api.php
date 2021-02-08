@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConsolaController;
+use App\Http\Controllers\ReparacionController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 }); */
 
 Route::resource('consola', ConsolaController::class, ['except'=>['create', 'edit']]);
+Route::resource('reparacion', ReparacionController::class, ['except' => ['create', 'edit']]);
+Route::resource('admin', AdminController::class, ['except' => ['create', 'edit']]);

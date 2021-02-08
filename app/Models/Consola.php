@@ -13,4 +13,8 @@ class Consola extends Model
     public $timestamps= false;
 
     protected $fillable = ['nombre','urlpic', 'estado', 'precio','fechaventa'];
+    
+    public function reparaciones(){
+        return $this->hasMany('App\Models\Reparacion', 'idconsola');
+    }
 }
